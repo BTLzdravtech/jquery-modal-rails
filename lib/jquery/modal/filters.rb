@@ -5,5 +5,6 @@ module Jquery
   end
 end
 
-
-ActionController::Base.send :include, Jquery::Filters
+ActiveSupport.on_load(:action_controller) do
+  include Jquery::Filters
+end

@@ -6,4 +6,6 @@ module Jquery
   end
 end
 
-ActionView::Base.send :include, Jquery::Helpers
+ActiveSupport.on_load(:action_view) do
+  include Jquery::Helpers
+end
