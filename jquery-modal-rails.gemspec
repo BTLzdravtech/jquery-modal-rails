@@ -11,14 +11,12 @@ Gem::Specification.new do |s|
   s.summary     = "The simplest possible modal for jQuery for the Rails 3.1+ asset pipeline"
   s.description = "The simplest possible modal for jQuery for the Rails 3.1+ asset pipeline based on https://github.com/kylefox/jquery-modal."
 
-  s.required_rubygems_version = ">= 1.3.6"
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
 
-  s.add_dependency "railties", ">= 3.2.0"
-  s.add_dependency "thor",     "~> 0.14"
-  s.add_dependency "jquery-ui-rails"
-  s.add_dependency "uuidtools"
-
-  s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  s.require_path = 'lib'
+  # specify any dependencies here; for example:
+  # s.add_development_dependency "rspec"
+  s.add_runtime_dependency "rails", ">= 3.1"
 end
